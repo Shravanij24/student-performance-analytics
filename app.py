@@ -11,9 +11,15 @@ st.set_page_config(
 )
 
 # 2. Custom dashboard styling
+# 2. Custom dashboard styling
 st.markdown("""
 <style>
     .stApp {
+        background-color: #F7F8FC;
+        color: #28345C;
+    }
+
+    [data-testid="stAppViewContainer"] {
         background-color: #F7F8FC;
     }
 
@@ -21,23 +27,34 @@ st.markdown("""
         background-color: #EEF0FA;
     }
 
+    .stMarkdown,
+    .stMarkdown p,
+    .stMarkdown li,
+    label,
+    [data-testid="stMetricLabel"],
+    [data-testid="stMetricValue"] {
+        color: #28345C !important;
+    }
+
+    h1, h2, h3, h4 {
+        color: #28345C !important;
+    }
+
     h1 {
-        color: #28345C;
         font-weight: 800;
     }
 
     h2, h3 {
-        color: #354477;
         font-weight: 700;
     }
 
-     [data-testid="stMetric"] {
-    background-color: white;
-    border: 1px solid #DDE1F0;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(40,52,92,0.08);
-}
+    [data-testid="stMetric"] {
+        background-color: white;
+        border: 1px solid #DDE1F0;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(40,52,92,0.08);
+    }
 
     [data-testid="stDataFrame"] {
         border: 1px solid #E2E5F0;
@@ -50,7 +67,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 2. Dashboard heading
+# 3. Dashboard heading
 st.title("📊 Student Performance Analytics")
 st.write("Analyze student marks and understand academic performance.")
 
